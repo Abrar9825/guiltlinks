@@ -41,11 +41,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
         await s3.putObject(params).promise();
         const downloadLink = `http://localhost:8000/file/${fileKey}`;
 
-        res.send(`
-            <h2>Uploaded!</h2>
-            <p>This link will self-destruct after 1 use:</p>
-            <a href="${downloadLink}" target="_blank">${downloadLink}</a>
-        `);
+        res.render('show', { downloadLink })
     } catch (err) {
         console.error("S3 Upload Error:", err);
         res.status(500).send("Upload failed: " + err.message);
@@ -70,7 +66,8 @@ app.get("/file/:key", async (req, res) => {
     console.log("Location:", `${location.city || ''}, ${location.region || ''}, ${location.country_name || ''}`);
 
     if (usedLinks.has(fileKey)) {
-        return res.send("<h3>❌ Link already used or expired.</h3>");
+        res.render('delete'); // This will render views/delete.ejs
+        return;
     }
     try {
         const signedUrl = s3.getSignedUrl('getObject', {

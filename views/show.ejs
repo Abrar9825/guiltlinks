@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Ready — One-Time Download</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Inter', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            box-shadow: 0 6px 24px rgba(37,99,235,0.07);
+            border-radius: 18px;
+            padding: 2.2rem 2rem 2rem 2rem;
+            max-width: 380px;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to   { opacity: 1; transform: translateY(0);}
+        }
+        h2 {
+            color: #2563eb;
+            margin-bottom: 0.2em;
+        }
+        .success-icon {
+            font-size: 2.5em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .desc {
+            color: #6b7280;
+            font-size: 1.07rem;
+            text-align: center;
+            margin-bottom: 1.3em;
+        }
+        .download-link {
+            background: #e0f2fe;
+            color: #2563eb;
+            padding: 0.7em 1em;
+            border-radius: 7px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 1.1em;
+            word-break: break-all;
+            transition: background 0.17s;
+        }
+        .download-link:hover {
+            background: #bae6fd;
+        }
+        .warn {
+            color: #f59e42;
+            margin-top: 1em;
+            font-size: 0.97em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>File Uploaded!</h2>
+        <div class="desc">
+            This download link will self-destruct after <strong>one use</strong>.<br>
+            Please share it carefully.
+        </div>
+        <a class="download-link" href="<%= downloadLink %>" target="_blank">
+            <i class="fa-solid fa-download"></i> <%= downloadLink %>
+        </a>
+        <div class="warn">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            After the first download, this link will expire.
+        </div>
+    </div>
+</body>
+</html>

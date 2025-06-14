@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Link Expired — Security Notice</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: #18181b;
+            font-family: 'Inter', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: #232329;
+            box-shadow: 0 6px 24px rgba(37,99,235,0.07);
+            border-radius: 18px;
+            padding: 2.2rem 2rem 2rem 2rem;
+            max-width: 400px;
+            width: 94vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.7s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to   { opacity: 1; transform: translateY(0);}
+        }
+        .big-emoji {
+            font-size: 2.8em;
+            margin-bottom: 0.7em;
+        }
+        h2 {
+            color: #f59e42;
+            margin-bottom: 0.3em;
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+        .desc {
+            color: #fafafa;
+            font-size: 1.08rem;
+            text-align: center;
+            margin-bottom: 1.2em;
+        }
+        .caught {
+            background: #fbbf24;
+            color: #232329;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.45em 1em;
+            margin-bottom: 1.1em;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(251,191,36,0.07);
+        }
+        .notice {
+            color: #fbbf24;
+            font-size: 1em;
+            text-align: center;
+            margin-bottom: 0.7em;
+            margin-top: -0.4em;
+        }
+        .footer {
+            color: #a1a1aa;
+            font-size: 0.99em;
+            text-align: center;
+            margin-top: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="big-emoji">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <h2>Link Expired</h2>
+        <div class="desc">
+            This secure link was valid for <strong>one-time use only</strong>.<br>
+            <div class="caught">ACCESS DENIED</div>
+            The file is no longer available. Further attempts to access this link are not permitted.
+        </div>
+        <div class="notice">
+            <i class="fa-solid fa-shield-halved"></i>
+            For security reasons, your IP address has been tracked.<br>
+            All activities are logged and monitored.
+        </div>
+        <div class="footer">
+            <i class="fa-solid fa-lock"></i> Secure One-Time Sharing — AWS S3
+        </div>
+    </div>
+</body>
+</html> 
