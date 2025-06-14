@@ -39,7 +39,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 
     try {
         await s3.putObject(params).promise();
-        const downloadLink = `http://localhost:8000/file/${fileKey}`;
+        const downloadLink = `http://13.232.170.236:8000/file/${fileKey}`;
 
         res.render('show', { downloadLink })
     } catch (err) {
@@ -104,5 +104,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(8000, () => {
-    console.log('Server running on http://localhost:8000');
+    console.log('Server running on http://13.232.170.236:8000');
 });
